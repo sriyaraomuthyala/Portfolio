@@ -8,6 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="/path/to/canva.ico" type="image/x-icon">
+    <link
+    rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -205,6 +208,133 @@
               alert("Failed to copy email: " + err);
             });
           }
-        </script>        
+        </script>      
+       <!-- Floating Chatbot Character Button -->
+<div id="chatbot-character" onclick="toggleChat()">
+  <img src="chatbot.gif" alt="Assistant Bot" id="chatbot-avatar">
+  <div id="chatbot-bubble">Chat with me!</div>
+</div>
+
+<!-- Chatbot Window -->
+<div id="chatbot-container">
+  <div id="chatbot-header" onclick="toggleChat()">
+    <span>Sriya’s Assistant</span>
+  </div>
+  <div id="chatbot-body">
+    <div id="chatbot-messages">
+      <div class="bot-msg">Hi! I'm Sriya's Assistant. Ask me anything about her work or projects!</div>
+    </div>
+    <div id="chatbot-input-area">
+      <input type="text" id="chatbot-input" placeholder="Type your message..." onkeydown="handleKey(event)">
+      <button onclick="sendMessage()" class="send-btn" aria-label="Send">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Chatbot Logic -->
+<script>
+  function toggleChat() {
+    const header = document.getElementById("chatbot-header");
+    const body = document.getElementById("chatbot-body");
+    const character = document.getElementById("chatbot-character");
+  
+    const isVisible = body.style.display === "block";
+  
+    if (isVisible) {
+      header.style.display = "none";
+      body.style.display = "none";
+      character.style.display = "block";
+    } else {
+      header.style.display = "block";
+      body.style.display = "block";
+      character.style.display = "none";
+    }
+  }
+  
+  function handleKey(event) {
+    if (event.key === "Enter") {
+      const input = document.getElementById("chatbot-input");
+      const message = input.value.trim();
+      if (message) {
+        addMessage(message, "user-msg");
+        respondToUser(message);
+        input.value = "";
+      }
+    }
+  }
+  function sendMessage() {
+    const input = document.getElementById("chatbot-input");
+    const message = input.value.trim();
+    if (message) {
+      addMessage(message, "user-msg");
+      respondToUser(message);
+      input.value = "";
+    }
+  }
+  function addMessage(message, className) {
+    const chatContainer = document.getElementById("chatbot-messages");
+    const msgDiv = document.createElement("div");
+    msgDiv.className = `message ${className}`;
+  
+    const text = document.createElement("span");
+    text.className = "msg-text";
+    text.textContent = message;
+  
+    const icon = document.createElement("img");
+    icon.className = "icon";
+    icon.src = className === "user-msg"
+      ? "https://cdn-icons-png.flaticon.com/512/149/149071.png" // user icon
+      : "https://cdn-icons-png.flaticon.com/512/4712/4712100.png"; // bot icon
+  
+    if (className === "user-msg") {
+      msgDiv.appendChild(text);
+      msgDiv.appendChild(icon);
+    } else {
+      msgDiv.appendChild(icon);
+      msgDiv.appendChild(text);
+    }
+  
+    chatContainer.appendChild(msgDiv);
+    chatContainer.scrollTop = chatContainer.scrollHeight; // auto-scroll
+  }
+  function respondToUser(message) {
+    const lowerMsg = message.toLowerCase();
+    let responses = [];
+  
+    if (lowerMsg.includes("project")) {
+      responses.push("Sriya’s top projects include Sign Language Detector, Fashion Recommender, and Nutritionist Gemini AI.");
+    }
+    if (lowerMsg.includes("skills")) {
+      responses.push("She is skilled in Python, Java, TensorFlow, ML/DL, YOLOv8, HTML/CSS, GitHub, Canva, and more.");
+    }
+    if (lowerMsg.includes("contact")) {
+      responses.push("You can reach her at sriyaraomuthyala@gmail.com or via LinkedIn.");
+    }
+    if (lowerMsg.includes("experience") || lowerMsg.includes("intern")) {
+      responses.push("Sriya was an ML Intern at SegriTech, building smart crop prediction models using YOLOv8.");
+    }
+    if (lowerMsg.includes("education") || lowerMsg.includes("college")) {
+      responses.push("She’s pursuing CSE (AI & ML) at Guru Nanak Institute of Technology, Hyderabad.");
+    }
+    if (lowerMsg.includes("roles") || lowerMsg.includes("volunteer")) {
+      responses.push("She’s a TEDxGNI designer, IMUN delegate, TPPOC rep, and anchored college fests.");
+    }
+    if (lowerMsg.includes("hobbies") || lowerMsg.includes("fun")) {
+      responses.push("Sriya loves singing, emceeing, design, and learning languages like Korean!");
+    }
+  
+    if (responses.length === 0) {
+      responses.push("Sorry, I didn't understand. Try asking about Sriya’s education, roles, tech stack, or hobbies.");
+    }
+  
+    setTimeout(() => {
+      responses.forEach(resp => addMessage(resp, "bot-msg"));
+    }, 600);
+  }
+  
+</script>
+
 </body>
 </html>
