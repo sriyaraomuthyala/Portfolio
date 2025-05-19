@@ -38,7 +38,6 @@ body {
   margin: 0;
 }
 
-/* Nav links - gradient text */
 .nav-bar-links {
   display: flex;
   gap: 1rem;
@@ -56,11 +55,131 @@ body {
   border-radius: 20px;
 }
 
-/* Hover: background fills in, text turns white */
 .nav-bar a:hover {
   background: radial-gradient(circle at top left, #3a0ca3, #7209b7, #560bad, #480ca8, #3f37c9);
   -webkit-text-fill-color: white;
 }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001; 
+  position: relative;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #3e1e68;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+
+  .nav-bar-links {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    border-radius: 0 0 20px 20px;
+    padding: 1em 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .nav-bar-links.active {
+    display: flex;
+  }
+
+  .nav-bar a {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .home::after {
+    display: none;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+ .text-content {
+    width: 100%;
+    text-align: center;
+  }
+  .image-content{
+    width: 90%;
+    text-align: center;
+    border-radius: 80%;
+  }
+  .image-content img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20%; 
+  }
+
+  .text-content h1, .text-content .name {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 80%;
+    margin: 10px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-logo {
+    width: 120px;
+  }
+
+  .fun-box {
+    width: 100%;
+  }
+
+  #chatbot-container {
+    width: 90%;
+  }
+
+  #chatbot-avatar {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 
 .home {
   width: 100%;
@@ -76,6 +195,7 @@ body {
   z-index: 1;
 }
 .home::after {
+  display: inline;
   content: "";
   position: absolute;
   bottom: 0;
@@ -124,6 +244,7 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   border: 4px solid rgba(178, 114, 238, 0.5); /* accent ring */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
 .image-content img:hover {
@@ -324,16 +445,6 @@ section {
   padding: 4rem 1.5rem;
   color: #fff;
   text-align: center;
-}
-.projects-section::after{
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000046); /* matches next section */
-  z-index: 1;
 }
 .section-title {
   font-size: 2.5rem;
