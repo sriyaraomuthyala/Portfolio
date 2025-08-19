@@ -6,6 +6,16 @@
     <title>Sriya Rao - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+  </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="/path/to/canva.ico" type="image/x-icon">
     <link
@@ -23,10 +33,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
             <span></span>
           </div>
           <div class="nav-bar-links">
-            <a href="#about-me">About</a>
+            <a href="#extras-section">About</a>
             <a href="#skill-section">Skills</a>
             <a href="#projects-section">Projects</a>
             <a href="#experience-section">Experience</a>
+            <a href="#casestudy-section">Casestudies</a>
             <a href="#contact">Contact</a>
           </div>   
         </nav> 
@@ -38,7 +49,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
                   <br>
                   <br>
                   <br>
-                    <h1>Hello, I'm</h1>
+                    <h1 style="font-weight: 400;">Hello, I'm</h1>
                     <h1 class="name">Sriya Rao Muthyala</h1>
                     <p class="role">AI Enthusiast | Front-End Developer | Designer</p>
                     <div class="btn-group">
@@ -54,46 +65,62 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         </div>        
     </div>
     <div id="skill-section">
-    <section class="skill-section">
-      <h2 class="skill-title">Skills</h2>
-      <div class="skills">
-        <div class="track">
-          <!-- Skills (first loop) -->
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/174/174854.png"><div>HTML</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/732/732190.png"><div>CSS</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"><div>Python</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/919/919854.png"><div>Java</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"><div>C</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png"><div>Machine Learning</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png"><div>MySQL</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248402.png"><div>Deep Learning</div></div>
-          <div class="skill"><img src="https://static.cdnlogo.com/logos/m/30/mongodb-icon.svg"><div>MongoDB</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/300/300221.png"><div>Google Cloud</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"><div>GitHub</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/906/906324.png"><div>VS Code</div></div>
-          <div class="skill"><img src="https://cdnlogo.com/logos/c/41/canva.svg"><div>Canva</div></div>
-          <div class="skill"><img src="https://logo.svgcdn.com/l/tensorflow.svg"><div>TensorFlow</div></div>
-        
-          <!-- Skills (second loop for seamless scroll) -->
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/174/174854.png"><div>HTML</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/732/732190.png"><div>CSS</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"><div>Python</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/919/919854.png"><div>Java</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"><div>C</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png"><div>Machine Learning</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png"><div>MySQL</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248402.png"><div>Deep Learning</div></div>
-          <div class="skill"><img src="https://static.cdnlogo.com/logos/m/30/mongodb-icon.svg"><div>MongoDB</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/300/300221.png"><div>Google Cloud</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"><div>GitHub</div></div>
-          <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/906/906324.png"><div>VS Code</div></div>
-          <div class="skill"><img src="https://cdnlogo.com/logos/c/41/canva.svg"><div>Canva</div></div>
-          <div class="skill"><img src="https://logo.svgcdn.com/l/tensorflow.svg"><div>TensorFlow</div></div>
-        </div>        
-        <br>
-        <br>
-      </div>
-    </section>
+      <section class="skill-section">
+        <h2 class="skill-title">Skills</h2>
+        <div class="skills">
+          <div class="track">
+            <!-- Skills (first loop) -->
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/174/174854.png"><div>HTML</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/732/732190.png"><div>CSS</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"><div>Python</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/919/919854.png"><div>Java</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"><div>C</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png"><div>Machine Learning</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png"><div>MySQL</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248402.png"><div>Deep Learning</div></div>
+            <div class="skill"><img src="https://static.cdnlogo.com/logos/m/30/mongodb-icon.svg"><div>MongoDB</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/300/300221.png"><div>Google Cloud</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"><div>GitHub</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/906/906324.png"><div>VS Code</div></div>
+            <div class="skill"><img src="https://cdnlogo.com/logos/c/41/canva.svg"><div>Canva</div></div>
+            <div class="skill"><img src="https://logo.svgcdn.com/l/tensorflow.svg"><div>TensorFlow</div></div>
+            
+            <!-- New Product Skills -->
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"><div>Figma</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/4712/4712107.png"><div>ChatGPT</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"><div>Agentic AI</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png"><div>Wireframing</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"><div>Product Design</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135692.png"><div>Presentation Skills</div></div>
+            
+            <!-- Skills (second loop for seamless scroll) -->
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/174/174854.png"><div>HTML</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/732/732190.png"><div>CSS</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"><div>Python</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/919/919854.png"><div>Java</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"><div>C</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png"><div>Machine Learning</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png"><div>MySQL</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248402.png"><div>Deep Learning</div></div>
+            <div class="skill"><img src="https://static.cdnlogo.com/logos/m/30/mongodb-icon.svg"><div>MongoDB</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/300/300221.png"><div>Google Cloud</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"><div>GitHub</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/906/906324.png"><div>VS Code</div></div>
+            <div class="skill"><img src="https://cdnlogo.com/logos/c/41/canva.svg"><div>Canva</div></div>
+            <div class="skill"><img src="https://logo.svgcdn.com/l/tensorflow.svg"><div>TensorFlow</div></div>
+            
+            <!-- New Product Skills again -->
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"><div>Figma</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/4712/4712107.png"><div>ChatGPT</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"><div>Agentic AI</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png"><div>Wireframing</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"><div>Product Design</div></div>
+            <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135692.png"><div>Presentation Skills</div></div>
+          </div>        
+          <br><br>
+        </div>
+      </section>
+      
     </div>
     <section id="projects-section" class="projects-section">
       <h2 class="section-title">Projects</h2>
@@ -129,65 +156,229 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     
       </div>
     </section>
-    <section id="experience-section" class="experience-section">
-      <h2 class="section-title">Experience</h2>
-      <div class="experience-card">
-        <div class="experience-header">
-          <img src="segritech.png" alt="SegriTech Logo" class="experience-logo">
-          <div class="experience-title">
-            <h3>Machine Learning Intern @ SegriTech</h3>
-            <p><strong>Aug - Nov 2024</strong></p>
+    <section id="casestudy-section" class="extras-section">
+    
+    <h2 class="section-title">Product Casestudies</h2>
+  
+
+  <div class="projects-grid">
+    <!-- Case Study Card 1 -->
+    <div class="project-card">
+      <img src="video-voice-assistant.png" alt="YouTube" class="pj-card-img">
+      <div class="project-info">
+        <h3>🎬 Video Voice Assistant for YouTube</h3>
+        <p>Making YouTube tutorials hands-free, accessible, and fun to follow 🚀</p>
+        <!-- Skills -->
+        <div class="flex flex-wrap gap-1 text-xs mb-3">
+          <span class="bg-purple-600 text-white px-3 py-1 rounded-full font-medium">🎤 User Research</span>
+          <span class="bg-pink-600 text-white px-3 py-1 rounded-full font-medium">🧑 Personas</span>
+          <span class="bg-indigo-600 text-white px-3 py-1 rounded-full font-medium">🎨 UX Design</span>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-full font-medium">🗣 Voice Interaction</span>
+          <span class="bg-fuchsia-700 text-white px-3 py-1 rounded-full font-medium">📊 Product Strategy</span>
+          <span class="bg-blue-600 text-white px-2 py-1 rounded-full">📐 Wireframing</span>
+        </div>
+        <button onclick="openModal('voice-assistant-modal')" class="project-btn">View Case Study</button>
+      </div>
+    </div>
+
+    <!-- Case Study Card 2 Placeholder -->
+    <div class="project-card">
+      <img src="ola.png" alt="Case Study" class="pj-card-img">
+      <div class="project-info">
+        <h3>💡Upcoming Ola Case Study</h3>
+        <p>Introducing designated driver feature for Ola</p>
+        <!-- Skills -->
+        <div class="flex flex-wrap gap-1 text-xs mb-3">
+          <span class="bg-purple-600 text-white px-3 py-1 rounded-full font-medium">💡 Product Thinking</span>
+          <span class="bg-indigo-600 text-white px-3 py-1 rounded-full font-medium">📐 Wireframing</span>
+          <span class="bg-pink-600 text-white px-3 py-1 rounded-full font-medium">🧑 Personas</span>
+        </div>
+        <button onclick="openModal('other-casestudy-modal')" class="project-btn">View Case Study</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </main>
+  
+   <!-- Modal for Voice Assistant Case Study -->
+   <div id="voice-assistant-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center z-50">
+    <div class="bg-white text-gray-800 w-11/12 md:w-3/4 lg:w-2/3 max-h-[90vh] overflow-y-auto rounded-2xl shadow-lg p-6 relative mt-[3cm]">
+      
+      <button onclick="closeModal('voice-assistant-modal')" 
+      class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-lg shadow hover:bg-purple-700">
+      ✖
+    </button>
+    <header class="text-center py-2 ">
+      <h2 class="text-3xl font-bold text-purple-600 overflow-hidden">Video Voice Assistant for YouTube</h2>
+      <p class="text-lg mt-2 text-gray-600">Case Study by a hypothetical Product Manager</p>
+    </header>
+
+    <!-- Overview -->
+    <h3 class="text-xl font-bold text-white-600 mb-5">Overview</h3>
+    <p>YouTube is one of the largest learning platforms today, but learners often face challenges when following along with tutorials. This project explores how a voice-enabled assistant can make tutorials more accessible, especially when users’ hands are occupied or when they struggle to keep up with fast-paced videos. Through research, prototyping, and validation, the goal was to design a solution that enhances the learning experience while also aligning with monetization opportunities for YouTube Premium.</p>
+    <div class="mt-4">
+      <p class="font-semibold mb-2">Key Skills:</p>
+      <div class="flex flex-wrap gap-2 text-xs">
+        <span class="bg-purple-600 text-white px-2 py-1 rounded-full">🎤 User Research</span>
+        <span class="bg-pink-600 text-white px-2 py-1 rounded-full">🧑 Personas</span>
+        <span class="bg-indigo-600 text-white px-2 py-1 rounded-full">🎨 UX Design</span>
+        <span class="bg-blue-600 text-white px-2 py-1 rounded-full">🗣 Voice Interaction</span>
+        <span class="bg-fuchsia-700 text-white px-2 py-1 rounded-full">📊 Product Strategy</span>
+        <span class="bg-blue-600 text-white px-2 py-1 rounded-full">📐 Wireframing</span>
+      </div>
+    </div>
+    <br>
+
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQT_BO6LQ6IX4YYh5I9eoggcemeQQLnGsBoZw2y30h80O_NiZxJHwt78lOZjhXkNw/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    <br>
+    <!-- Approach (Keep Gradient Style) -->
+
+    <h3 class="text-xl font-bold text-white-600 mb-2">My Approach</h3>
+      <div class="p-4 rounded-xl text-sm">
+        <div class="flex flex-col items-start space-y-1 text-sm font-medium">
+          <div class="flex items-center flex-wrap gap-2 px-4 py-1 rounded-xl text-sm font-medium text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-lg">
+            <span>💡 Personal Frustration</span>
+            <span class="mx-2">➝</span>
+            <span>🔍 EdTech Research</span>
+            <span class="mx-2">➝</span>
+            <span>🗣 Surveys & Interviews</span>
+            <span class="mx-2">➝</span>
+            <span>🧑 Personas</span>
+            <span class="mx-2">➝</span>
+            <span>🗺 Journey Mapping</span>
+            <span class="mx-2">➝</span>
+            <span>🎯 JTBD & Hypotheses</span>
+            <span class="mx-2">➝</span>
+            <span>🎨 Wireframes & Prototypes</span>
+            <span class="mx-2">➝</span>
+            <span>✅ Testing & Prioritization</span>
           </div>
         </div>
-        <div class="experience-content">
-          <p>- Transformed raw field data into clean, labeled datasets that machines could actually understand, 90%+ accuracy!</p>
-          <p>- Engineered smart models using <strong>YOLOv8, CNNs, and ANNs</strong> in Python to predict agricultural outcomes—because even crops deserve intelligence.</p>
-          <p>- Worked hands-on with <strong>real agri-data</strong> to solve tangible problems, blending tech with impact.</p>
+      </div>
+    <br>
+
+    <!-- Problem -->
+    <h3 class="text-xl font-bold text-white-600 mb-5">The Problem</h3>
+    <ul><b>⚫ Hands-Busy Struggle:</b>65.4% of users said tutorials are hard to follow when their hands are occupied.</ul>
+    <ul><b>⚫ Rewind & Replay:</b> 61% of learners constantly rewind/rewatch steps because tutorials move too fast.</ul>
+    <ul><b>⚫ Frustration:</b>Learners can’t pause videos mid-action, leading to broken focus.</ul>
+    <br>
+
+    <!-- Solution (Keep Gradient Style) -->
+    <section class="max-w-5xl mx-auto bg-gradient-to-r from-purple-200 to-pink-200 rounded-2xl shadow-md mt-6">
+      <h3 class="text-xl font-bold text-white-600 mb-5">The Solution</h3>
+        <li><b>Voice Commands:</b> 96% said hands-free navigation is important.</li>
+        <li><b>Step-by-Step Prompts:</b> Keeps learners on track.</li>
+        <li><b>Rewind-Free Mode:</b> Maintains flow without interruptions.</li>
+    </section>
+    <br>
+    <!-- Impact -->
+    <h3 class="text-xl font-bold text-white-600 mb-5">Impact & Insights</h3>
+      <ul><b>⚫ User Validation:</b> 65% confirmed hands-free is needed.</ul>
+      <ul><b>⚫ Monetization Potential:</b> Great fit for YouTube Premium.</ul>
+      <ul><b>⚫ User Simplicity:</b> Transcripts + repeatable steps.</ul>
+    <br>
+
+    <!-- Reflection -->
+    <section class="max-w-5xl mx-auto bg-gradient-to-r from-purple-200 to-pink-200 rounded-2xl shadow-md mt-6">
+    <h3 class="text-xl font-bold text-white-600 mb-5">Reflection & Future Scope</h3>
+    <p>What started as a personal frustration (learning guitar hands-free) turned into a validated product opportunity. With strong user demand, the next step is to scale into YouTube Premium and expand to other tutorial platforms.</p>
+  </section>
+    <br>
+  </div>
+</div>
+
+  
+    <!-- Modal Placeholder for Other Case Study -->
+    <div id="other-casestudy-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+      <div class="bg-white w-11/12 md:w-3/4 lg:w-2/3 max-h-[90vh] overflow-y-auto rounded-2xl shadow-lg p-6 relative">
+        <button onclick="closeModal('other-casestudy-modal')" class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-lg shadow hover:bg-purple-700">✖</button>
+        <h2 class="text-3xl font-bold text-purple-700 mb-4">Upcoming Ola Case Study</h2>
+        <p class="text-gray-600">This is a placeholder for upcaoming designated driver feature proposal for Ola</p>
+      </div>
+    </div>
+  </section>
+    <section class="projects-section" id="experience-section">
+      <h2 class="section-title">Experience</h2>
+      <div class="relative max-w-6xl mx-auto">
+        <!-- Horizontal timeline line (only visible on md+ screens) -->
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-purple-600 via-pink-500 to-fuchsia-600 rounded"></div>
+    
+        <!-- Timeline items -->
+        <div class="flex md:flex-row flex-col justify-between items-center relative z-10">
+    
+          <!-- SegriTech -->
+          <div class="flex flex-col items-center md:w-1/3 w-full mb-12 md:mb-0">
+            <div class="mb-6 bg-white text-gray-800 rounded-2xl shadow-lg p-4 text-center max-w-xs">
+              <img src="segritech.png" alt="SegriTech Logo" class="w-20 h-20 rounded-lg mx-auto mb-3 shadow-md">
+              <h3 class="font-semibold text-lg">Machine Learning Intern</h3>
+              <p class="text-sm text-pink-600 font-medium">Aug – Nov 2024</p>
+              <p class="text-xs mt-2">Built ML models with YOLOv8, CNNs, ANNs to analyze agri-data with 90%+ accuracy.</p>
+            </div>
+            <div class="w-4 h-4 bg-fuchsia-500 rounded-full border-4 border-white md:mb-0 mb-6"></div>
+          </div>
+    
+          <!-- eVidyaloka -->
+          <div class="flex flex-col items-center md:w-1/3 w-full mb-12 md:mb-0">
+            <div class="mb-6 bg-white text-gray-800 rounded-2xl shadow-lg p-4 text-center max-w-xs">
+              <img src="evidyaloka.png" alt="eVidyaloka Logo" class="w-20 h-20 rounded-lg mx-auto mb-3 shadow-md">
+              <h3 class="font-semibold text-lg">Content Developer Volunteer</h3>
+              <p class="text-sm text-pink-600 font-medium">Jul 2025 – Present</p>
+              <p class="text-xs mt-2">Designed curriculum-aligned content tailored to underserved students, optimized for accessibility.</p>
+            </div>
+            <div class="w-4 h-4 bg-fuchsia-500 rounded-full border-4 border-white md:mb-0 mb-6"></div>
+          </div>
+    
+          <!-- TEDxGNI -->
+          <div class="flex flex-col items-center md:w-1/3 w-full">
+            <div class="mb-6 bg-white text-gray-800 rounded-2xl shadow-lg p-4 text-center max-w-xs">
+              <img src="tedxgni.jpg" alt="TEDxGNI Logo" class="w-20 h-20 rounded-lg mx-auto mb-3 shadow-md">
+              <h3 class="font-semibold text-lg">Social Media Lead</h3>
+              <p class="text-sm text-pink-600 font-medium">Aug – Oct 2023</p>
+              <p class="text-xs mt-2">Led branding & content strategy, gained 300+ followers, and published 15+ visually consistent posts.</p>
+            </div>
+            <div class="w-4 h-4 bg-fuchsia-500 rounded-full border-4 border-white"></div>
+          </div>
+    
         </div>
       </div>
     </section>    
-     <section id="about-me" class="about-me">
-      <h2 class="section-title">About Me</h2>
-      <p class="about-text">
-        I’m <strong>Sriya Rao Muthyala</strong>, a Computer Science Engineering student specializing in <strong>Artificial Intelligence and Machine Learning</strong> at Guru Nanak Institute of Technology, Hyderabad. I’m an inherently curious individual with a deep love for learning, constantly exploring new dimensions of technology and creativity.
-        <br><br>
-        I find joy in understanding complex concepts and simplifying them into real-world solutions. Whether it’s building intelligent systems using <strong>YOLOv8, CNNs, and TensorFlow</strong> or experimenting with <strong>Generative AI and Streamlit</strong>, I immerse myself fully in every challenge I take on. Learning never feels like work to me—it's a passion I chase every day.
-        <br><br>
-        I believe in staying multidimensional—balancing tech with art, logic with empathy, and ambition with humility. My journey is fueled by curiosity, creativity, and the desire to make a meaningful impact through technology.
-      </p>
-    </section>
-    <section id="extras-section" class="extras-section">
-      <h2 class="section-title">More About Me</h2>
+   
+    <section class="extras-section">
+      <h2 class="section-title" id="extras-section">More About Me</h2>
       <div class="extras-grid">
         <div class="fun-box">
           <h4>Roles & Events</h4>
           <ul>
             <img class= "abt-img" src="ttpoc.jpeg" alt="">
-            <li>- Core Team & Designer, TEDxGNI</li>
-            <li>- Sales & Marketing, HR Conclave GNI</li>
-            <li>- Volunteer, Under25 Summit </li>
-            <li>- Student Representative, TPPOC</li>
+            <br>
+            <li>⚪ Sales & Marketing, HR Conclave GNI</li>
+            <li>⚪ Volunteer, Under25 Summit </li>
+            <li>⚪ Student Representative, TPPOC</li>
           </ul>
         </div>
         <div class="fun-box">
           <h4>Beyond Tech</h4>
           <ul>
             <img class= "abt-img" src="sing.jpeg" alt="">
-            <li>- Open Mic Singer </li>
-            <li>- Anchored college fests </li>
-            <li>- Delegate – IMUN 2020 </li>
+            <br>
+            <li>⚪ Open Mic Singer </li>
+            <li>⚪ Anchored college fests </li>
+            <li>⚪ Delegate – IMUN 2020 </li>
           </ul>
         </div>
         <div class="fun-box">
           <h4>Languages</h4>
           <ul>
             <img class= "abt-img" src="lang.jpg" alt="">
-            <li>- English, Hindi</li>
-            <li>- Telugu, Korean (Basic)</li>
+            <br>
+            <li>⚪ English, Hindi</li>
+            <li>⚪ Telugu, Korean (Basic)</li>
           </ul>
         </div>
-        <section id="contact" class="contact-section">
-          <h2 class="section-title">Contact</h2>
+        <section class="contact-section">
+          <h2 class="section-title" id="contact">Contact</h2>
           <p class="contact-text">
             I'd love to hear from you! Whether it’s a collaboration idea, project opportunity, or just a hello—feel free to reach out.
           </p>
@@ -215,11 +406,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <!-- Chatbot Window -->
 <div id="chatbot-container">
   <div id="chatbot-header" onclick="toggleChat()">
-    <span>Sriya’s Assistant</span>
+    <span>💬 Sriya’s Assistant</span>
+    <span id="chatbot-toggle">−</span>
   </div>
   <div id="chatbot-body">
     <div id="chatbot-messages">
-      <div class="bot-msg">Hi! I'm Sriya's Assistant. Ask me anything about her work or projects!</div>
+      <div class="bot-msg">Hi! I'm Sriya's Assistant 🤖<br>Ask me anything about her work or projects!</div>
     </div>
     <div id="chatbot-input-area">
       <input type="text" id="chatbot-input" placeholder="Type your message..." onkeydown="handleKey(event)">
@@ -229,8 +421,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     </div>
   </div>
 </div>
+<footer class="w-full  text-gray-300 py-2 mt-10">
+    <div class="border-t border-purple-400 mt-6 pt-4 text-sm">
+      <p>© 2025 Sriya Rao. All rights reserved.</p>
+      <p class="mt-1">Made with ❤️ using HTML, CSS & Tailwind</p>
+    </div>
+  </div>
+</footer>
 <script src="app.js"></script>
-
-
 </body>
+
 </html>
