@@ -478,8 +478,9 @@ section {
 .projects-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  max-width: 1080px;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1200px;
   margin: 0 auto;
   justify-content: center;
   overflow: hidden;
@@ -525,7 +526,7 @@ section {
 }
 .project-btn {
   display: inline-block;
-  padding: 0.5rem 1.2rem;
+  padding: 0.5rem 0.5rem;
   background: radial-gradient(circle at top left, #a259ff, #ff6ec4);
   color: #fff;
   font-size: 0.85rem;
@@ -549,7 +550,7 @@ section {
 }
 
 .project-btn:hover {
-  transform: scale(1.08);
+  transform: scale(1.0);
   box-shadow: 0 0 30px rgba(255, 116, 233, 0.9), 0 0 60px rgba(255, 116, 233, 0.4);
 }
 .experience-section{
@@ -632,7 +633,7 @@ section {
   background: rgba(255, 255, 255, 0.05);
   padding: 1.5rem;
   border-radius: 18px;
-  width: 280px;
+  width: 400px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
@@ -641,6 +642,7 @@ section {
 
 .fun-box h4 {
   font-size: 1.2rem;
+  font-weight: 600;
   margin-bottom: 1rem;
   color: #ffd6ff;
   text-align: center;
@@ -652,8 +654,8 @@ section {
   font-size: 0.95rem;
 }
 .abt-img{
-  width: 275px;
-  height: auto;
+  width: 380px;
+  height: 300px;
   border-radius: 5px;
   border: 1px #dcd3ff;
 }
@@ -733,6 +735,7 @@ section {
   gap: 8px;
   align-items: center;
   padding: 10px;
+  color: #000;
   flex-shrink: 0;
   border-top: 1px solid #ccc;
   background-color: #fff;
